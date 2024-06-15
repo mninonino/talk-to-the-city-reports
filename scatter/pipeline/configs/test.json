@@ -1,0 +1,19 @@
+{
+  "name": "Recursive Public, Agenda Setting",
+  "question": "What should be top of the agenda as humanity develops and deploys artificial intelligence?",
+  "input": "test",
+  "model": "gpt-4o",
+  "extraction": {
+    "workers": 3,
+    "limit": 12
+  },
+  "clustering": {
+    "clusters": 3
+  },
+  "translation": {
+    "model": "gpt-4o",
+    "languages": ["Japanese"],
+    "flags": ["JP"]
+  },
+  "intro": "This AI-generated report relies on data from a Polis consultation run by the Recursive Public team."
+}
