@@ -12,7 +12,7 @@
     "@visx/voronoi": "^3.3.0",
     "@visx/zoom": "^3.3.0",
     "diff": "^5.1.0",
-    "next": "13.5.4",
+    "next": "^14.2.5",
     "opencc-js": "^1.0.5",
     "react": "^18",
     "react-dom": "^18",

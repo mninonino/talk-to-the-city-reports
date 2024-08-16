@@ -29,6 +29,8 @@ def main():
         run_step('overview', overview, config)
         run_step('translation', translation, config)
         run_step('aggregation', aggregation, config)
+        #環境変数 REPORT を output_dir に基づいて設定
+        os.environ['REPORT'] = config['output_dir']
         run_step('visualization', visualization, config)
         termination(config)
     except Exception as e:

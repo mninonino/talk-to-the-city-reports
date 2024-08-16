@@ -8,11 +8,21 @@ def visualization(config):
         result = f.read()
 
     cwd = "../next-app"
-    command = f"REPORT={output_dir} npm run build"
+    #command = f"REPORT={output_dir} npm run build"
 
     try:
-        process = subprocess.Popen(command, shell=True, cwd=cwd, stdout=subprocess.PIPE,
-                                   stderr=subprocess.PIPE, universal_newlines=True)
+        # # 1. 環境変数の設定をスクリプト全体に適用
+        import os
+        os.environ['REPORT'] = output_dir
+
+        # # 2. ビルドコマンドの実行
+        build_command = 'npm run build'
+        process = subprocess.Popen(build_command, shell=True, cwd=cwd, stdout=subprocess.PIPE,
+                                   stderr=subprocess.PIPE, universal_newlines=True, encoding='utf-8')
+
+        #process = subprocess.Popen(command, shell=True, cwd=cwd, stdout=subprocess.PIPE,
+        #                           stderr=subprocess.PIPE, universal_newlines=True)
+
         while True:
             output_line = process.stdout.readline()
             if output_line == '' and process.poll() is not None:
